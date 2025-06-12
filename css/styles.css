@@ -91,3 +91,21 @@ footer {
 .project-card a:hover {
   text-decoration: underline;
 }
+.about-me {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: #eee;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.about-me h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #ffd700;
+}
