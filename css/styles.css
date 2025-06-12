@@ -134,3 +134,23 @@ footer {
 .contact-info a:hover {
   text-decoration: underline;
 }
+body {
+  background-color: #121212;
+  color: #ffffff;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+button#darkModeToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
