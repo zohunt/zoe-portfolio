@@ -31,7 +31,42 @@
       <p>If you like expressive interfaces, thoughtful UX, or just want to talk about the moon 🌕 — let’s connect!</p>
     </section>
   </main>
+ <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+    });
 
+    const toggle = document.getElementById("darkModeToggle");
+
+    // Load saved mode on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("colorMode");
+      if (savedMode === "light") {
+        document.body.classList.add("light-mode");
+        toggle.textContent = "🌞";
+      } else {
+        document.body.classList.remove("light-mode");
+        toggle.textContent = "🌙";
+      }
+    });
+
+    // Toggle and save preference on button click
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      toggle.textContent = isLight ? "🌞" : "🌙";
+      localStorage.setItem("colorMode", isLight ? "light" : "dark");
+    });
+  </script>
   <footer>
     <p>© 2025 Zoe Hunt</p>
   </footer>
