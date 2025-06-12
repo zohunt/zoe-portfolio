@@ -109,3 +109,28 @@ footer {
   font-size: 2rem;
   color: #ffd700;
 }
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #eee;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #f4e76e;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
