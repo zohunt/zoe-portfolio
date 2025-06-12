@@ -11,6 +11,11 @@ body.light-mode {
   --accent: #0fa3b1;
   --card-bg: rgba(0, 0, 0, 0.05);
 }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
 body {
   background-color: var(--bg);
