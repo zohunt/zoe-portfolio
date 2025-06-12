@@ -132,3 +132,13 @@ main.home section {
   z-index: 0;
   pointer-events: none;
 }
+/* Change link color on contact page */
+.contact a {
+  color: #ff9b42; /* your desired color */
+  text-decoration: underline; /* optional, for clarity */
+}
+
+/* Optional: change color on hover */
+.contact a:hover {
+  color: #f7a072;
+}
