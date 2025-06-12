@@ -47,5 +47,14 @@
   <footer>
     <p>© 2025 Zoe Hunt</p>
   </footer>
+  <script>
+  const toggle = document.getElementById("darkModeToggle");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    toggle.textContent = document.body.classList.contains("light-mode") ? "🌞" : "🌙";
+  });
+</script>
+
 </body>
 </html>
