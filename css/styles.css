@@ -142,3 +142,37 @@ main.home section {
 .contact a:hover {
   color: #f7a072;
 }
+@keyframes colorfulStarMove {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 60px 60px, -60px -60px;
+  }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-color); /* keep your base background */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  
+  /* multiple layers for color and glow */
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 160, 122, 0.1) 1.5px, transparent 3px);
+  
+  background-size: 30px 30px, 45px 45px;
+  animation: colorfulStarMove 40s linear infinite;
+  
+  filter: drop-shadow(0 0 2px rgba(255, 160, 122, 0.6)) drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.5));
+}
