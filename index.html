@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -35,16 +35,8 @@
     <p>© 2025 Zoe Hunt</p>
   </footer>
 
-  <!-- Scripts go here so the DOM is fully loaded before JS runs -->
   <script>
-    // Dark Mode Toggle
-    const toggle = document.getElementById("darkModeToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      toggle.textContent = document.body.classList.contains("light-mode") ? "🌞" : "🌙";
-    });
-
-    // Smooth Scrolling
+    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -55,6 +47,28 @@
           });
         }
       });
+    });
+
+    const toggle = document.getElementById("darkModeToggle");
+
+    // Load saved mode on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("colorMode");
+      if (savedMode === "light") {
+        document.body.classList.add("light-mode");
+        toggle.textContent = "🌞";
+      } else {
+        document.body.classList.remove("light-mode");
+        toggle.textContent = "🌙";
+      }
+    });
+
+    // Toggle and save preference on button click
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      toggle.textContent = isLight ? "🌞" : "🌙";
+      localStorage.setItem("colorMode", isLight ? "light" : "dark");
     });
   </script>
 </body>
